@@ -1,0 +1,11 @@
+Assignment Deadline is  Friday 14th November
+Student Grades Manager
+Goal: Create a program that manages a list of students and their scores.
+Requirements:
+    •    Store at least 5 students as objects in an array (each with a name and score).
+    •    Use:
+    •    map() to get all student names.
+    •    filter() to find those who passed (score ≥ 50).
+    •    reduce() to find the average score.
+    •    A for loop to display all student results in the console.
+    •    Use an if...else to assign grades (A, B, C, D, F) based on their score. (edited) 
