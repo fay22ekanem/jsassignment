@@ -81,48 +81,135 @@
 // console.log(sum);
 
 
-const students = [
-    { name: "Gift", score: 85 },
-    { name: "Sharon", score: 40 },
-    { name: "Rose", score: 72 },
-    { name: "Favour", score: 50 },
-    { name: "Beauty", score: 56 },
+// const students = [
+//     { name: "Gift", score: 85 },
+//     { name: "Sharon", score: 40 },
+//     { name: "Rose", score: 72 },
+//     { name: "Favour", score: 50 },
+//     { name: "Beauty", score: 56 },
+// ];
+
+// const newStudents = students.map((student) => {
+//     return student.name;
+// });
+
+// console.log(newStudents)
+
+// const passedStudents = students.filter((student) => {
+//     return student.score > 50;
+// });
+// console.log(newStudents)
+// console.log(passedStudents)
+
+// const totalScore = students.reduce((sum, students) => sum + students.score, 0);
+// const averageScore = totalScore / students.length;
+// console.log(averageScore)
+
+// for (let i = 0; i < students.length; i++) {
+//     console.log("Name: " + students[i].name + ", Score:" +
+//         students[i].score);
+// }
+
+// for (let i = 0; i < students.length; i++) {
+//     let grade;
+//     let score = students[i].score;
+
+//     if (score >= 80) {
+//         grade = "A"
+//     } else if (score >= 70) {
+//         grade = "B"
+//     } else if (score >= 60) {
+//         grade = "C"
+//     } else if (score >= 50) {
+//         grade = "D"
+//     } else {
+//         grade = "F"
+//     }
+//     console.log("Name: " + students[i].name + ", Score: " + score + ",Grade: " + grade);}
+
+// const name = "Favour";
+// const year = "2003";
+// const age = 22;
+// const isAlive = true;
+
+// //console.log(Hi! My name is Favour, I am 22 years old, I was born in the year 2003, and my living state is true.)  
+// console.log()
+
+// const name = "Favour"
+// const year = "2003"
+// const age = 22
+// const isAlive = true 
+
+// console.log("Hi, My name is " +   name +  ", I am " + age + " years old, I was born in the year " + year  +  ", and my living state is " +   isAlive + "."  )
+
+//firstName, middleName, lastName, fullName
+// const firstname = "Favour"
+// const middlename = "Enotobong"
+// const lastname = "Ekanem"
+// const fullname = firstname + " " + middlename + " " + lastname
+
+// console.log (fullname)
+// create variables for this output: My car is a 2025 Tesla, the color is blue and the number plate is 420POW314
+
+// const carname = "Tesla"
+// const year = 2025
+// const color = "blue"
+// const platenumber = "420POW314"
+
+// console.log ("My car is a " + year + " Tesla, the color is " + color + " and the number plate is " + platenumber) 
+
+// Using the Shorthand (+= operator)
+// Loading: 100% complete.
+
+// statusMessage, progress
+
+// let statusmessage = "loading: "
+// let progress = 0
+
+// for (let i = 0; i <= 100; i += 10){
+//     progress = i; 
+//     statusmessage += progress + "%" ;
+//     console.log (statusmessage)
+// }
+// statusmessage += "complete";
+// console.log (statusmessage)
+
+const pictures =[ 
+    "./images/img1.jpg",
+    "./images/img2.jpg",
+    "./images/img3.jpg",
+    "./images/img4.jpg"
 ];
 
-const newStudents = students.map((student) => {
-    return student.name;
-});
+let current = 0;
 
-console.log(newStudents)
+const slide = document.getElementById("slide");
 
-const passedStudents = students.filter((student) => {
-    return student.score > 50;
-});
-console.log(newStudents)
-console.log(passedStudents)
-
-const totalScore = students.reduce((sum, students) => sum + students.score, 0);
-const averageScore = totalScore / students.length;
-console.log(averageScore)
-
-for (let i = 0; i < students.length; i++) {
-    console.log("Name: " + students[i].name + ", Score:" +
-        students[i].score);
+function showImage() {
+  slide.src = pictures[current];
 }
 
-for (let i = 0; i < students.length; i++) {
-    let grade;
-    let score = students[i].score;
+function nextImage() {
+  current++;
+  if (current >= pictures.length) {
+    current = 0; 
+  }
+  showImage();
+}
 
-    if (score >= 80) {
-        grade = "A"
-    } else if (score >= 70) {
-        grade = "B"
-    } else if (score >= 60) {
-        grade = "C"
-    } else if (score >= 50) {
-        grade = "D"
-    } else {
-        grade = "F"
-    }
-    console.log("Name: " + students[i].name + ", Score: " + score + ",Grade: " + grade);}
+function prevImage() {
+  current--;
+  if (current < 0) {
+    current = pictures.length - 1;
+  }
+  showImage();
+}
+
+setInterval(nextImage, 4000);
+
+slide.addEventListener("click", nextImage);
+
+document.getElementById("nextBtn").addEventListener("click", nextImage);
+document.getElementById("prevBtn").addEventListener("click", prevImage);
+
+showImage();

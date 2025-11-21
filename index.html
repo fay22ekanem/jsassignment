@@ -3,12 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Introduction to javascript</title>
+    <title>Image Carousel</title>
     <script src="index.js" defer></script>
     <link rel="stylesheet" href="index.css">
 </head>
-<body>
-    <h1>I Love Javascript</h1>
-    My Name is Favour and I am learning a javascript module. 
+<body> 
+    <div class="carousel-box">
+        <img id="slide" class="carousel-img" src="./images/img1.jpg" alt="cloudy">
+        <img id="slide" class="carousel-img" src="./images/img2.jpg" alt="yellow">
+        <img id="slide" class="carousel-img" src="./images/img3.jpg" alt="mountain">
+        <img id="slide" class="carousel-img" src="./images/img4.jpg" alt="natural">
+
+        <button id="prevBtn" class="btn">Previous</button>
+        <button id="nextBtn" class="btn">Next</button> 
+    </div>
 </body>
 </html>
