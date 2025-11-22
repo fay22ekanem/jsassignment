@@ -175,10 +175,10 @@
 // console.log (statusmessage)
 
 const pictures =[ 
-    "./images/img1.jpg",
-    "./images/img2.jpg",
-    "./images/img3.jpg",
-    "./images/img4.jpg"
+    "./images/img1-min.jpg",
+    "./images/img2-min.jpg",
+    "./images/img3-min.jpg",
+    "./images/img4-min.jpg"
 ];
 
 let current = 0;
@@ -213,3 +213,5 @@ document.getElementById("nextBtn").addEventListener("click", nextImage);
 document.getElementById("prevBtn").addEventListener("click", prevImage);
 
 showImage();
+
+
